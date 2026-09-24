@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "run_time_local": "2026-09-24T12:03:35",
+    "symbol": "sz000636"
+  },
+  "checks": {
+    "quote_snapshot": {
+      "request_time_local": "2026-09-24T12:03:35",
+      "field30": "20260924120306",
+      "field35": "56.83/557262/3212332185",
+      "field6_volume_hand": "557262",
+      "field37_amount_wan": "321233",
+      "current_price": "56.83"
+    },
+    "daily": {
+      "name": "daily_qfq",
+      "count": 321,
+      "first_time": "2025-06-06",
+      "last_time": "2026-09-24",
+      "duplicate_timestamps": 0,
+      "response_data_keys": [
+        "qfqday",
+        "qt",
+        "mx_price",
+        "prec",
+        "version"
+      ],
+      "today_bar": [
+        "2026-09-24",
+        "57.90",
+        "56.83",
+        "59.68",
+        "56.50",
+        "557262"
+      ],
+      "last_bar_close_equals_quote_price": true,
+      "first_10_dates": [
+        "2025-06-06",
+        "2025-06-09",
+        "2025-06-10",
+        "2025-06-11",
+        "2025-06-12",
+        "2025-06-13",
+        "2025-06-16",
+        "2025-06-17",
+        "2025-06-18",
+        "2025-06-19"
+      ],
+      "date_gaps_note": "周末/节假日缺口属正常；仅检查交易日顺序",
+      "is_strictly_increasing": true
+    },
+    "m1": {
+      "name": "m1",
+      "count": 800,
+      "first_time": "202609211014",
+      "last_time": "202609241130",
+      "duplicate_timestamps": 0,
+      "today_bars": 121,
+      "today_first_bar": [
+        "202609240930",
+        "57.90",
+        "57.90",
+        "57.90",
+        "57.90",
+        "6310.00",
+        {},
+        "5.50"
+      ],
+      "today_last_bar": [
+        "202609241130",
+        "56.80",
+        "56.83",
+        "56.91",
+        "56.80",
+        "1602.00",
+        {},
+        "1.40"
+      ],
+      "morning_bars_count": 121,
+      "timestamp_semantics": "interval_start(区间开始,首根0930覆盖09:30:00-09:31:00)",
+      "sum_today_volume_hand": 557264.0,
+      "quote_cumulative_volume_hand": 557262.0,
+      "volume_type_conclusion": "interval(区间量): 1分钟求和≈行情累计量",
+      "is_strictly_increasing": true
+    },
+    "m5": {
+      "name": "m5",
+      "count": 320,
+      "first_time": "202609151425",
+      "last_time": "202609241130",
+      "duplicate_timestamps": 0,
+      "today_bars": 24,
+      "today_first_bar": [
+        "202609240935",
+        "57.90",
+        "58.27",
+        "59.60",
+        "57.90",
+        "119899.00",
+        {},
+        "104.49"
+      ],
+      "today_last_bar": [
+        "202609241130",
+        "56.73",
+        "56.83",
+        "56.91",
+        "56.67",
+        "7737.00",
+        {},
+        "6.74"
+      ],
+      "sum_today_volume_hand": 557264.0,
+      "cross_check_vs_m1": "consistent: 5分钟求和≈1分钟求和",
+      "is_strictly_increasing": true
+    },
+    "field30_semantics": {
+      "evidence": [
+        "11:31:06请求→field[30]=20260924113106",
+        "11:41:06请求→field[30]=20260924114106",
+        "11:44:06请求→field[30]=20260924114406",
+        "本次12:03:35请求→field[30]=20260924120306"
+      ],
+      "conclusion": "休市时段(11:30-13:00)field[30]随请求时间持续刷新，因此field[30]=行情快照时间(≈服务器响应时间)，不能称为最后成交时间。休市期间真实最后成交时间应取分钟K线最后一根bar的时间戳。"
+    },
+    "bar_completeness": {
+      "daily_last_bar": "未完成(当日未收盘)",
+      "m1_last_bar_ts": "202609241130",
+      "m1_last_bar_status": "已完成(午休,最后一根为11:30)",
+      "m5_last_bar_status": "不完整(11:30 bar仅含1分钟)"
+    }
+  }
+}

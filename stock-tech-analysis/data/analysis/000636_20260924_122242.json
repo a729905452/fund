@@ -1,0 +1,297 @@
+{
+  "status": "success",
+  "meta": {
+    "code": "000636",
+    "name": "风华高科",
+    "market": "sz",
+    "fetch_time": "2026-09-24T12:22:42",
+    "snapshot_time": "20260924120506",
+    "snapshot_time_note": "快照时间为服务器响应时间，非最后成交时间（M0 实证）",
+    "last_trade_ts": "202609241130",
+    "stale_note": null,
+    "degradations": [],
+    "fetch_errors": []
+  },
+  "quote": {
+    "status": "success",
+    "code": "000636",
+    "name": "风华高科",
+    "market": "sz",
+    "price": 56.83,
+    "prev_close": 58.74,
+    "open": 57.9,
+    "high": 59.68,
+    "low": 56.5,
+    "change": -1.91,
+    "change_pct": -3.25,
+    "volume": 55726200,
+    "amount": 3212332185.0,
+    "pe_ratio": 160.31,
+    "market_cap_yi": 652.12,
+    "snapshot_time": "20260924120506",
+    "raw_volume": 557262.0,
+    "raw_volume_unit": "手",
+    "raw_amount": 321233.0,
+    "raw_amount_unit": "万元",
+    "raw_field_count": 88,
+    "fetch_time": "2026-09-24T12:22:42"
+  },
+  "quality": {
+    "daily": {
+      "usable": true,
+      "issues": [],
+      "warnings": [],
+      "bar_count": 321,
+      "first_ts": "2025-06-06",
+      "last_ts": "2026-09-24",
+      "incomplete_last_bar": true,
+      "minute_gaps": []
+    },
+    "m1": {
+      "usable": true,
+      "issues": [],
+      "warnings": [],
+      "bar_count": 800,
+      "first_ts": "202609211014",
+      "last_ts": "202609241130",
+      "incomplete_last_bar": false,
+      "minute_gaps": []
+    },
+    "m5": {
+      "usable": true,
+      "issues": [],
+      "warnings": [],
+      "bar_count": 320,
+      "first_ts": "202609151425",
+      "last_ts": "202609241130",
+      "incomplete_last_bar": false,
+      "minute_gaps": []
+    },
+    "cross_m1_quote": {
+      "consistent": true,
+      "minute_sum_shares": 55726400,
+      "quote_cumulative_shares": 55726200,
+      "diff_pct": 0.0004,
+      "note": "同口径校验：当日分钟区间量求和 vs 行情累计量"
+    },
+    "daily_price_alignment": {
+      "aligned": true,
+      "daily_today_close": 56.83,
+      "quote_price": 56.83,
+      "note": "qfq 口径一致"
+    }
+  },
+  "structure": {
+    "period": "day",
+    "current_price": 56.83,
+    "swing_points": {
+      "highs_count": 29,
+      "lows_count": 26,
+      "window": 3
+    },
+    "supports": [
+      {
+        "kind": "support",
+        "period": "day",
+        "lower": 55.48,
+        "upper": 55.911,
+        "mid": 55.695,
+        "points_count": 2,
+        "first_formed_ts": "2026-07-07",
+        "last_confirmed_ts": "2026-09-23",
+        "algo_version": "swing-v1.0",
+        "distance_pct": 2.0
+      },
+      {
+        "kind": "support",
+        "period": "day",
+        "lower": 53.761,
+        "upper": 53.761,
+        "mid": 53.761,
+        "points_count": 1,
+        "first_formed_ts": "2026-06-09",
+        "last_confirmed_ts": "2026-06-12",
+        "algo_version": "swing-v1.0",
+        "distance_pct": 5.4
+      },
+      {
+        "kind": "support",
+        "period": "day",
+        "lower": 49.46,
+        "upper": 49.46,
+        "mid": 49.46,
+        "points_count": 1,
+        "first_formed_ts": "2026-08-25",
+        "last_confirmed_ts": "2026-08-28",
+        "algo_version": "swing-v1.0",
+        "distance_pct": 12.97
+      }
+    ],
+    "resistances": [
+      {
+        "kind": "resistance",
+        "period": "day",
+        "lower": 57.36,
+        "upper": 57.36,
+        "mid": 57.36,
+        "points_count": 1,
+        "first_formed_ts": "2026-08-28",
+        "last_confirmed_ts": "2026-09-02",
+        "algo_version": "swing-v1.0",
+        "distance_pct": 0.93
+      },
+      {
+        "kind": "resistance",
+        "period": "day",
+        "lower": 60.5,
+        "upper": 60.5,
+        "mid": 60.5,
+        "points_count": 1,
+        "first_formed_ts": "2026-09-14",
+        "last_confirmed_ts": "2026-09-17",
+        "algo_version": "swing-v1.0",
+        "distance_pct": 6.46
+      },
+      {
+        "kind": "resistance",
+        "period": "day",
+        "lower": 64.491,
+        "upper": 64.491,
+        "mid": 64.491,
+        "points_count": 1,
+        "first_formed_ts": "2026-06-04",
+        "last_confirmed_ts": "2026-06-09",
+        "algo_version": "swing-v1.0",
+        "distance_pct": 13.48
+      }
+    ],
+    "position": {
+      "zone": "between",
+      "current_price": 56.83,
+      "nearest_support": {
+        "kind": "support",
+        "period": "day",
+        "lower": 55.48,
+        "upper": 55.911,
+        "mid": 55.695,
+        "points_count": 2,
+        "first_formed_ts": "2026-07-07",
+        "last_confirmed_ts": "2026-09-23",
+        "algo_version": "swing-v1.0",
+        "distance_pct": 2.0
+      },
+      "nearest_resistance": {
+        "kind": "resistance",
+        "period": "day",
+        "lower": 57.36,
+        "upper": 57.36,
+        "mid": 57.36,
+        "points_count": 1,
+        "first_formed_ts": "2026-08-28",
+        "last_confirmed_ts": "2026-09-02",
+        "algo_version": "swing-v1.0",
+        "distance_pct": 0.93
+      },
+      "support_distance_pct": -1.62,
+      "resistance_distance_pct": 0.93
+    },
+    "space_ratio": {
+      "ratio": 0.58,
+      "up_pct": 0.93,
+      "down_pct": 1.62,
+      "reason": "ok"
+    },
+    "not_computable": [],
+    "params_used": {
+      "swing_window": 3,
+      "merge_tolerance_pct": 1.5,
+      "max_regions_per_side": 5,
+      "relevance_pct": 15.0
+    },
+    "algo_version": "swing-v1.0"
+  },
+  "signals": {
+    "buy": {
+      "state": "confirm_pending",
+      "from_scenario": "support_retest",
+      "state_reason": "已进入观察区，但卖压/止跌确认条件未全部满足，继续等待",
+      "all_scenarios": {
+        "support_retest": "confirm_pending",
+        "breakout_pullback": "confirm_pending"
+      }
+    },
+    "sell": {
+      "state": "no_new_trigger",
+      "state_reason": "现价在防守支撑之上，无新增技术触发",
+      "sources": [
+        "no_new_trigger"
+      ]
+    },
+    "scenarios": {
+      "support_retest": {
+        "scenario": "support_retest",
+        "state": "confirm_pending",
+        "state_reason": "已进入观察区，但卖压/止跌确认条件未全部满足，继续等待",
+        "evidence": [
+          "观察区 [54.37, 57.029]（依据：支撑区域[55.48,55.911] ± 2.0%）",
+          "现价 56.83 位于观察区内",
+          "止跌迹象：连续 2 根未创新低，末根收盘 56.83 ≥ 开盘 56.8"
+        ],
+        "counter_evidence": [
+          "卖压未明显减弱：近5根均量 154740股，前5根均量 150100股"
+        ],
+        "observation_zone": {
+          "lower": 54.37,
+          "upper": 57.029,
+          "basis": "支撑区域[55.48,55.911] ± 2.0%",
+          "source_support": {
+            "kind": "support",
+            "period": "day",
+            "lower": 55.48,
+            "upper": 55.911,
+            "mid": 55.695,
+            "points_count": 2,
+            "first_formed_ts": "2026-07-07",
+            "last_confirmed_ts": "2026-09-23",
+            "algo_version": "swing-v1.0",
+            "distance_pct": 2.0
+          }
+        }
+      },
+      "breakout_pullback": {
+        "scenario": "breakout_pullback",
+        "state": "confirm_pending",
+        "state_reason": "现价跌破突破位，需先收复突破位才谈回踩；当前按假突破风险等待",
+        "evidence": [
+          "突破位 57.36（压力区域上沿），确认阈值 57.934",
+          "突破已确认：最近 1 根收盘均高于 57.934",
+          "现价回踩突破位附近（距 57.36 为 0.92%）",
+          "分钟线转强：近3根收盘 56.7→56.83 抬升"
+        ],
+        "counter_evidence": [
+          "现价 56.83 低于突破位 57.36，突破位应转为支撑；未收复前按假突破风险处理"
+        ],
+        "breakout_level": 57.36,
+        "max_accept_price": 60.228
+      },
+      "support_failure": {
+        "scenario": "support_failure",
+        "sell_state": "no_new_trigger",
+        "state_reason": "现价在防守支撑之上，无新增技术触发",
+        "evidence": [
+          "防守支撑 55.48（支撑区域下沿），初步穿越线 55.203，确认失守线 54.925"
+        ],
+        "counter_evidence": [],
+        "failure_level": 55.48
+      }
+    },
+    "profit_protect": null,
+    "rules_version": "0.1.0",
+    "rules_note": "规则配置 V0.1（初始占位，待 M5 样例校准）。这些阈值是本实现的工作假设，不是 V3.4 策略原文规则，也不预设适用于所有股票。"
+  },
+  "provenance": {
+    "rules_version": "0.1.0",
+    "algo_version": "swing-v1.0",
+    "data_dir": "C:\\Users\\Administrator\\.workbuddy\\skills\\stock-tech-analysis\\data\\raw\\20260924_122242"
+  }
+}

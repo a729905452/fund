@@ -1,0 +1,44 @@
+{
+  "_comment": "规则配置 V0.1（初始占位，待 M5 样例校准）。这些阈值是本实现的工作假设，不是 V3.4 策略原文规则，也不预设适用于所有股票。",
+  "version": "0.1.0",
+  "observation_zone": {
+    "near_support_pct": 2.0,
+    "_note": "进入观察区：现价距支撑区域上沿 ≤ 此百分比"
+  },
+  "selling_pressure": {
+    "volume_shrink_ratio": 0.7,
+    "volume_window": 5,
+    "_note": "卖压减弱：最近 volume_window 根均量 < 前一同窗口均量 × shrink_ratio"
+  },
+  "stop_fall": {
+    "min_bars_stable": 2,
+    "body_reclaim": true,
+    "_note": "止跌迹象：连续 min_bars 根不再创新低，且末根收盘 ≥ 开盘（若 body_reclaim）"
+  },
+  "breakout": {
+    "confirm_close_above_pct": 1.0,
+    "confirm_bars": 1,
+    "_note": "突破确认：收盘价高于压力上沿 confirm_close_above_pct%，连续 confirm_bars 根"
+  },
+  "pullback": {
+    "near_breakout_pct": 2.0,
+    "max_accept_above_breakout_pct": 5.0,
+    "_note": "回踩区：现价距突破位 ≤ near_breakout_pct%；最高接受价 = 突破位 × (1+max_accept_above_breakout_pct%)"
+  },
+  "support_failure": {
+    "initial_cross_pct": 0.5,
+    "confirm_close_below_pct": 1.0,
+    "confirm_bars": 1,
+    "reclaim_bars": 2,
+    "_note": "初步穿越：盘中低于支撑下沿 initial_cross_pct%；规则确认失守：收盘低于下沿 confirm_close_below_pct% 连续 confirm_bars 根；收回：失守后 reclaim_bars 根内收盘回到区域内"
+  },
+  "profit_protect": {
+    "drawdown_from_peak_pct": 8.0,
+    "_note": "盈利保护观察：自【持仓以来】最高点回撤超过此值进入风险观察。需提供建仓时点 entry_date；缺 entry_date 时仅输出历史窗口回撤参考，不归为持仓盈利保护（F12）"
+  },
+  "confirmation_periods": {
+    "structure_confirm": "m5",
+    "early_hint": "m1",
+    "_note": "F06：盘中结构确认用5分钟；1分钟仅早期提示，不升级为5分钟或日线确认"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "verification_date": "2026-09-24",
+    "verification_time_local": "2026-09-24 ~11:41 CST",
+    "stock_name": "风华高科",
+    "stock_code": "000636",
+    "market": "sz (深圳)"
+  },
+  "section_1_tool_info": {
+    "skill_name": "stock-price-query",
+    "skill_dir": "~/.workbuddy/skills/stock-price-query/",
+    "script_name": "stock_query.py",
+    "script_version": "1.1.4",
+    "data_source": "腾讯财经公开HTTP接口 (qt.gtimg.cn)",
+    "api_endpoint_quote": "https://qt.gtimg.cn/q={symbol}",
+    "api_endpoint_daily_kline": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param={symbol},day,,,count,qfq",
+    "api_endpoint_minute_kline": "https://ifzq.gtimg.cn/appstock/app/kline/mkline?param={symbol},m{period},,count",
+    "auth": "无需密钥，直接HTTP GET",
+    "encoding": "行情接口返回GBK编码，K线接口返回UTF-8 JSON"
+  },
+  "section_2_raw_quote": {
+    "raw_api_response": "51~风华高科~000636~56.83~58.74~57.90~557262~227136~330127~56.83~27~56.81~50~56.80~41~56.79~5~56.78~27~56.90~7~56.91~5~56.94~1~56.95~43~56.97~1~~20260924114406~-1.91~-3.25~59.68~56.50~56.83/557262/3212332185~557262~321233~4.86~160.31~~59.68~56.50~5.41~652.12~652.12~5.22~64.61~52.87~0.88~93~57.64~112.32~230.17~~~2.46~321233.2185~0.0000~0~   A~GP-A~251.21~0.32~0.18~3.21~2.39~83.90~14.73~11.65~5.03~-15.00~1147489969~1147490419~44.93~248.20~1147489969~~~262.41~0.18~~CNY~0~~57.00~-217~",
+    "total_raw_fields": 88,
+    "key_fields": {
+      "[1]_name": "风华高科",
+      "[2]_code": "000636",
+      "[3]_current_price": "56.83",
+      "[4]_prev_close": "58.74",
+      "[5]_open": "57.90",
+      "[6]_volume_raw": "557262",
+      "[7]_bid_vol": "227136",
+      "[8]_ask_vol": "330127",
+      "[30]_time": "20260924114406",
+      "[31]_change": "-1.91",
+      "[32]_change_pct": "-3.25",
+      "[33]_high": "59.68",
+      "[34]_low": "56.50",
+      "[35]_price_vol_amt": "56.83/557262/3212332185",
+      "[36]_volume_dup": "557262",
+      "[37]_amount_raw": "321233",
+      "[39]_pe_ratio": "160.31",
+      "[45]_market_cap_yi": "652.12"
+    },
+    "unit_verification": {
+      "volume_raw_unit": "手 (1手=100股)",
+      "volume_raw_value": 557262,
+      "volume_script_converted": "脚本将A股成交量 x100 转为 股",
+      "volume_script_value": 55726200,
+      "amount_raw_unit": "万元",
+      "amount_raw_value": 321233.0,
+      "amount_script_converted": "脚本将A股成交额 x10000 转为 元",
+      "amount_script_value": 3212330000.0,
+      "field35_exact_amount": "3212332185",
+      "field35_exact_amount_unit": "元 (field[35]格式: 价格/成交量(手)/成交额(元))"
+    },
+    "time_distinction": {
+      "query_time": "2026-09-24 ~11:41 (HTTP请求发起时刻)",
+      "market_time": "20260924114406 (API field[30], 格式 YYYYMMDDHHmmss, 即2026-09-24 11:41:06, 为最后成交时间)",
+      "note": "两者相差在秒级以内。行情时间field[30]是最后成交时刻，非请求时刻。"
+    }
+  },
+  "section_3_kline_tests": {
+    "daily": {
+      "endpoint": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz000636,day,,,320,qfq",
+      "status": "success",
+      "total_bars": 321,
+      "adjust_type": "qfq (前复权)",
+      "field_format": "[date, open, close, high, low, volume]",
+      "volume_unit": "手 (与实时行情field[6]一致)",
+      "first_bar": [
+        "2025-06-06",
+        "13.282",
+        "13.242",
+        "13.302",
+        "13.192",
+        "55501.000"
+      ],
+      "last_bar": [
+        "2026-09-24",
+        "57.90",
+        "56.83",
+        "59.68",
+        "56.50",
+        "557262"
+      ],
+      "last_bar_is_incomplete": true,
+      "last_bar_note": "最后一根为今日(2026-09-24)未收盘K线, close=56.83=当前价"
+    },
+    "1min": {
+      "endpoint": "https://ifzq.gtimg.cn/appstock/app/kline/mkline?param=sz000636,m1,,320",
+      "status": "success",
+      "total_bars": 320,
+      "field_format": "[datetime, open, close, high, low, volume, {}, amount]",
+      "volume_unit": "手",
+      "amount_field_unit": "未明确，需进一步验证",
+      "first_bar": [
+        "202609231012",
+        "57.36",
+        "57.49",
+        "57.50",
+        "57.36",
+        "1753.00",
+        {},
+        "1.5277"
+      ],
+      "last_bar": [
+        "202609241130",
+        "56.80",
+        "56.83",
+        "56.91",
+        "56.80",
+        "1602.00",
+        {},
+        "1.40"
+      ],
+      "last_bar_is_incomplete": false,
+      "last_bar_note": "最后一根为11:30, 午间休市前的最后1分钟K线, 属完整K线(当前处于午休时段)",
+      "adjust_type": "无复权 (分钟线通常不涉及复权)"
+    },
+    "5min": {
+      "endpoint": "https://ifzq.gtimg.cn/appstock/app/kline/mkline?param=sz000636,m5,,320",
+      "status": "success",
+      "total_bars": 320,
+      "field_format": "[datetime, open, close, high, low, volume, {}, amount]",
+      "volume_unit": "手",
+      "amount_field_unit": "未明确，需进一步验证",
+      "first_bar": [
+        "202609151425",
+        "57.76",
+        "57.71",
+        "57.84",
+        "57.69",
+        "10743.39",
+        {},
+        "9.3625"
+      ],
+      "last_bar": [
+        "202609241130",
+        "56.73",
+        "56.83",
+        "56.91",
+        "56.67",
+        "7737.00",
+        {},
+        "6.74"
+      ],
+      "last_bar_is_incomplete": true,
+      "last_bar_note": "最后一根为11:30的5分钟K线, 午休时段仅含1分钟数据, 属不完整K线",
+      "adjust_type": "无复权 (分钟线通常不涉及复权)"
+    }
+  },
+  "section_4_environment": {
+    "python_path": "D:/python/python.exe",
+    "python_version": "Python 3.12.0",
+    "can_run_local_script": true,
+    "script_location": "C:/Users/Administrator/.workbuddy/skills/stock-price-query/scripts/stock_query.py",
+    "calling_method": "D:/python/python.exe <script_path> <stock_code> [market]",
+    "network_access": "可访问 qt.gtimg.cn 和 web.ifzq.gtimg.cn / ifzq.gtimg.cn",
+    "libraries_used": "仅使用Python标准库 (urllib, json, re, sys, time)"
+  },
+  "section_5_conclusion": {
+    "verified_capabilities": [
+      "1. A股实时行情查询（单只+批量）- 通过 stock_query.py 脚本",
+      "2. 原始API返回88个字段，含价格/量额/PE/市值/买卖五档等",
+      "3. 成交量单位：API原始为手，脚本转换为股(x100)",
+      "4. 成交额单位：API原始为万元，脚本转换为元(x10000)",
+      "5. field[30]为行情时间(最后成交时刻)，field[35]含精确成交额(元)",
+      "6. 历史日线K线获取（前复权qfq）- 通过 web.ifzq.gtimg.cn 端点，返回321根",
+      "7. 1分钟K线获取 - 通过 ifzq.gtimg.cn 端点，返回320根",
+      "8. 5分钟K线获取 - 通过 ifzq.gtimg.cn 端点，返回320根",
+      "9. 日线包含未收盘的当日K线（close=当前价）",
+      "10. 本地Python 3.12可正常运行脚本，网络通畅",
+      "11. 结果可保存为结构化JSON文件"
+    ],
+    "not_supported": [
+      "1. stock_query.py 脚本本身不支持K线/历史数据查询（仅有实时行情功能）",
+      "2. 脚本不提供复权方式选择",
+      "3. 脚本不提供时间范围筛选参数"
+    ],
+    "unknown_pending_verification": [
+      "1. K线amount字段(第8字段)的单位——数值与预期量级不匹配，需单独验证",
+      "2. 后复权(hfq)和不复权方式是否可用——端点支持但未实际测试",
+      "3. 日线最大可返回K线数量(测试了320, 实际返回321, 是否支持更多未知)",
+      "4. 15分钟/30分钟/60分钟K线是否可用——未测试",
+      "5. 港股/美股K线是否支持同样端点——未测试",
+      "6. K线接口是否有频率限制/限流——未测试",
+      "7. 日线K线开始日期是否可自定义——参数格式为 param=symbol,day,start,end,count,adjust, 未测试start/end"
+    ]
+  }
+}

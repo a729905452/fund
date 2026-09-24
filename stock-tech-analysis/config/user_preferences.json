@@ -1,0 +1,20 @@
+{
+  "_comment": "用户偏好配置。用户只输入名称或代码时，应用这里的默认周期与持仓信息。缺少持仓不阻止纯技术分析。",
+  "version": "0.1.0",
+  "default_periods": {
+    "background": "day",
+    "intraday": "m5",
+    "early_hint": "m1",
+    "_note": "日线判断背景、5分钟判断盘中结构、1分钟辅助较早提示（1分钟提示不自动升级为日线或5分钟确认）"
+  },
+  "data_fetch": {
+    "daily_count": 320,
+    "daily_adjust": "qfq",
+    "m1_count": 800,
+    "m5_count": 320
+  },
+  "holdings": {
+    "_note": "可选。填入成本价后启用盈利保护观察；无持仓时留空，不阻止纯技术分析。",
+    "_example": {"code": "000636", "cost": 55.00}
+  }
+}
